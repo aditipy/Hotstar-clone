@@ -42,6 +42,7 @@ body{
     margin-left: 20px;
     text-decoration-color: #fff;
     opacity: 0.9; 
+    color: rgb(240, 239, 207);
 }
 
 .right-container{
@@ -154,7 +155,7 @@ body{
     font-weight: 500;
 }
 
-.movie-list{
+.movies-list{
     width: 100%;
     height: 220px;
     position: relative;
@@ -182,7 +183,7 @@ body{
     width: 100%;
     height: 100%;
     left: 0;
-    transition: 1s;
+    transition: .1s;
     overflow: hidden;
 }
 
@@ -192,6 +193,7 @@ body{
     object-fit: cover;
     display: block;
     margin-left: auto;
+    
 }
 
 .slide-content{
@@ -201,11 +203,15 @@ body{
     z-index: 2;
     background: linear-gradient(to right, #030b17 80,#0c111b00);
     color: #fff;
+    
+    
 }
 .movie-title{
     padding-left: 50px;
     text-transform: capitalize;
     margin-top: 80px;
+    transition: .5s;
+    
 }
 
 .movie-des{
@@ -215,4 +221,136 @@ body{
     padding-left: 50px;
     margin-top: 30px;
     opacity: 0.8;
+    
+
+}
+
+.card-container::-webkit-scrollbar{
+    display: none;
+}
+
+.card{
+    position: relative;
+    min-width: 150px;
+    width: 150px;
+    height: 200px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-right: 10px;
+    transition: .5s;
+}
+
+.card-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card:hover{
+    transform: scale(1,1);
+}
+
+.card:hover .card-body{
+    opacity: 1;
+}
+.card-body{
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background: linear-gradient(to bottom, rgba(4,8,15,0),#192133 90%);
+    padding: 10px;
+    transition: .5s;
+}
+
+.name{
+    color: #fff;
+    font-size: 15px;
+    margin-top: 60%;
+    font-weight: 500;
+}
+
+.des{
+    color: #fff;
+    opacity: 0.8;
+    margin: 5px 0;
+    font-weight: 500;
+    font-size: 12px;
+}
+
+.watchlist-btn{
+    position: relative;
+    width: 100%;
+    text-transform: capitalize;
+    background: none;
+    border: none;
+    font-weight: 500;
+    text-align: right;
+    color: rgba(255, 255, 255, 0.5);
+    margin: 5px 0;
+    cursor: pointer;
+    padding: 10px 5px;
+    border-radius: 5px;
+
+}
+
+.watchlist-btn::before{
+    content:'';
+    position: absolute;
+    top:0;
+    left: -5px;
+    height: 35px;
+    width: 35px;
+    background-image: url(images/add.png);
+    background-size: cover;
+    transform: scale(0.4);
+
+}
+.watchlist-btn:hover{
+    color: #fff;
+    background: rgba(255,255,255,0.1);
+
+}
+
+.pre-btn, 
+.next-btn{
+    position: absolute;
+    top: 0;
+    width: 5%;
+    height: 100%;
+    z-index: 2;
+    border: none;
+    cursor: pointer;
+    outline: none;
+
+}
+
+.pre-btn{
+    left: 0;
+    background: linear-gradient(to right, #0c111b 0%, #0c111b00);
+}
+
+.next-btn{
+    right: 0;
+    background: linear-gradient(to left, #0c111b 0%, #0c111b00);
+}
+
+.pre-btn img, 
+.next-btn img{
+    width: 15px;
+    height: 20px;
+    opacity: 0;
+    
+
+}
+
+.pre-btn:hover img, 
+.next-btn:hover img{
+    
+    opacity: 1;
+    
+
 }
